@@ -27,7 +27,6 @@ class ViewController: UITableViewController {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
             }
-            print(pictures)
         }
     }
 
@@ -39,6 +38,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
         cell.textLabel?.text = pictures[indexPath.row]
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
         return cell
     }
     

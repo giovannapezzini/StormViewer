@@ -4,7 +4,7 @@
 An application that lets users scroll through a list of images, then select one to view.
 
 ## Screenshots
-![StormViewer Banner](Documentation/AppBanner.png)
+![StormViewer Banner](StormViewer/Documentation/AppBanner.png)
 
 ## What I learned
 

@@ -79,11 +79,11 @@
 				1361197D259F878C001D4039 /* AppDelegate.swift */,
 				1361197F259F878C001D4039 /* SceneDelegate.swift */,
 				13611981259F878C001D4039 /* ViewController.swift */,
+				136119AF259FF258001D4039 /* DetailViewController.swift */,
 				13611986259F8790001D4039 /* Assets.xcassets */,
 				13611988259F8790001D4039 /* LaunchScreen.storyboard */,
 				1361198B259F8790001D4039 /* Info.plist */,
 				13611993259F8A01001D4039 /* Content */,
-				136119AF259FF258001D4039 /* DetailViewController.swift */,
 			);
 			path = StormViewer;
 			sourceTree = "<group>";

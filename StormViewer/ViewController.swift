@@ -45,6 +45,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
         detailVC.selectedImage = pictures[indexPath.row]
+        detailVC.selectedPictureNumber = indexPath.row + 1
+        detailVC.totalPictures = pictures.count
         
         navigationController?.pushViewController(detailVC, animated: true)
     }

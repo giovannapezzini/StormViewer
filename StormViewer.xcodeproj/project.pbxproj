@@ -64,6 +64,7 @@
 		13611971259F878C001D4039 = {
 			isa = PBXGroup;
 			children = (
+				136B888825A1A8F1004473FC /* README.md */,
 				1361197C259F878C001D4039 /* StormViewer */,
 				1361197B259F878C001D4039 /* Products */,
 			);
@@ -89,7 +90,6 @@
 				13611988259F8790001D4039 /* LaunchScreen.storyboard */,
 				1361198B259F8790001D4039 /* Info.plist */,
 				13611993259F8A01001D4039 /* Content */,
-				136B888825A1A8F1004473FC /* README.md */,
 			);
 			path = StormViewer;
 			sourceTree = "<group>";

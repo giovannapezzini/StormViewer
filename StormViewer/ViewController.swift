@@ -16,18 +16,27 @@ class ViewController: UITableViewController {
         
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let items = try! fm.contentsOfDirectory(atPath: path)
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Picture")
-        
-        for item in items.sorted() {
-            if item.hasPrefix("nssl") {
-                pictures.append(item)
+        performSelector(inBackground: #selector(loadPictures), with: nil)
+    }
+    
+    @objc func loadPictures() {
+        DispatchQueue.main.async {
+            let fm = FileManager.default
+            let path = Bundle.main.resourcePath!
+            let items = try! fm.contentsOfDirectory(atPath: path)
+            
+            
+            for item in items.sorted() {
+                if item.hasPrefix("nssl") {
+                    self.pictures.append(item)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }

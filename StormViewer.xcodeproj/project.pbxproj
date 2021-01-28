@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		132569FA25C3647D0082B2D4 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132569F925C3647D0082B2D4 /* PictureCell.swift */; };
+		132569FD25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132569FC25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		1361197E259F878C001D4039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361197D259F878C001D4039 /* AppDelegate.swift */; };
 		13611980259F878C001D4039 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1361197F259F878C001D4039 /* SceneDelegate.swift */; };
 		13611982259F878C001D4039 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13611981259F878C001D4039 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		132569F925C3647D0082B2D4 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		132569FC25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1361197A259F878C001D4039 /* StormViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StormViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1361197D259F878C001D4039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1361197F259F878C001D4039 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				1361197F259F878C001D4039 /* SceneDelegate.swift */,
 				13611981259F878C001D4039 /* ViewController.swift */,
 				132569F925C3647D0082B2D4 /* PictureCell.swift */,
+				132569FC25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				136119AF259FF258001D4039 /* DetailViewController.swift */,
 				13611986259F8790001D4039 /* Assets.xcassets */,
 				13611988259F8790001D4039 /* LaunchScreen.storyboard */,
@@ -205,6 +208,7 @@
 			files = (
 				13611982259F878C001D4039 /* ViewController.swift in Sources */,
 				1361197E259F878C001D4039 /* AppDelegate.swift in Sources */,
+				132569FD25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				132569FA25C3647D0082B2D4 /* PictureCell.swift in Sources */,
 				13611980259F878C001D4039 /* SceneDelegate.swift in Sources */,
 				136119B0259FF258001D4039 /* DetailViewController.swift in Sources */,

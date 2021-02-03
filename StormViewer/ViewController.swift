@@ -15,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Storm Viewer"
+        title = "Storm Viewer ⛈"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView?.register(PictureCell.self, forCellWithReuseIdentifier: "Picture")
-        collectionView?.backgroundColor = .systemGray5
+        collectionView?.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         

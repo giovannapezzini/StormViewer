@@ -15,12 +15,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureView()
+        configureCollectionView()
+        performSelector(inBackground: #selector(loadPictures), with: nil)
+    }
+    
+    func configureView() {
         title = "Storm Viewer ⛈"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-        
-        configureCollectionView()
-        performSelector(inBackground: #selector(loadPictures), with: nil)
     }
     
     func configureCollectionView() {

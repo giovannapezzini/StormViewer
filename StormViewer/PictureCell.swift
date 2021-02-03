@@ -11,7 +11,6 @@ class PictureCell: UICollectionViewCell {
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -26,7 +25,7 @@ class PictureCell: UICollectionViewCell {
     
     func configure() {
         addSubview(label)
-        backgroundColor = .white
+        backgroundColor = UIColor(red: 0.90, green: 0.95, blue: 1.00, alpha: 1.00)
         layer.cornerRadius = 7
         
         NSLayoutConstraint.activate([

@@ -69,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				136B888825A1A8F1004473FC /* README.md */,
+				136B888B25A1AB1A004473FC /* Documentation */,
 				1361197C259F878C001D4039 /* StormViewer */,
 				1361197B259F878C001D4039 /* Products */,
 			);
@@ -85,15 +86,9 @@
 		1361197C259F878C001D4039 /* StormViewer */ = {
 			isa = PBXGroup;
 			children = (
-				136B888B25A1AB1A004473FC /* Documentation */,
-				1361197D259F878C001D4039 /* AppDelegate.swift */,
-				1361197F259F878C001D4039 /* SceneDelegate.swift */,
-				13611981259F878C001D4039 /* ViewController.swift */,
-				136119AF259FF258001D4039 /* DetailViewController.swift */,
-				132569F925C3647D0082B2D4 /* PictureCell.swift */,
-				132569FC25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift */,
-				13611986259F8790001D4039 /* Assets.xcassets */,
-				13611988259F8790001D4039 /* LaunchScreen.storyboard */,
+				137A6A4E25CB7DD500906FFE /* Screens */,
+				137A6A5025CB7DFF00906FFE /* Custom Views */,
+				137A6A4B25CB7C6F00906FFE /* Support */,
 				1361198B259F8790001D4039 /* Info.plist */,
 				13611993259F8A01001D4039 /* Content */,
 			);
@@ -123,6 +118,51 @@
 				136B888C25A25942004473FC /* AppBanner.png */,
 			);
 			path = Documentation;
+			sourceTree = "<group>";
+		};
+		137A6A4B25CB7C6F00906FFE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1361197D259F878C001D4039 /* AppDelegate.swift */,
+				1361197F259F878C001D4039 /* SceneDelegate.swift */,
+				13611986259F8790001D4039 /* Assets.xcassets */,
+				13611988259F8790001D4039 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		137A6A4D25CB7DA100906FFE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				132569F925C3647D0082B2D4 /* PictureCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		137A6A4E25CB7DD500906FFE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				13611981259F878C001D4039 /* ViewController.swift */,
+				136119AF259FF258001D4039 /* DetailViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		137A6A4F25CB7DDF00906FFE /* Custom FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				132569FC25C36AB80082B2D4 /* LeftAlignedCollectionViewFlowLayout.swift */,
+			);
+			path = "Custom FlowLayout";
+			sourceTree = "<group>";
+		};
+		137A6A5025CB7DFF00906FFE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				137A6A4D25CB7DA100906FFE /* Cell */,
+				137A6A4F25CB7DDF00906FFE /* Custom FlowLayout */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

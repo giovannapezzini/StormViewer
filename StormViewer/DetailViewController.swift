@@ -14,6 +14,10 @@ class DetailViewController: UIViewController {
     var selectedPictureNumber = 0
     var totalPictures = 0
     
+    var key = ""
+    var count = 0
+    var countLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -21,7 +25,10 @@ class DetailViewController: UIViewController {
         
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
+        setCounter()
         configureImageView()
+        configureLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,8 +38,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let key = "\(String(describing: selectedImage))"
-        let count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
         UserDefaults.standard.set(count + 1, forKey: key)
     }
     
@@ -52,6 +57,11 @@ class DetailViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    func setCounter() {
+        key = "\(String(describing: selectedImage))"
+        count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
+    }
+    
     func configureImageView() {
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,5 +77,17 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
+    }
+    
+    func configureLabel() {
+        view.addSubview(countLabel)
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        countLabel.text = "views: \(count)"
+        countLabel.textColor = .secondaryLabel
+        
+        NSLayoutConstraint.activate([
+            countLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            countLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 }

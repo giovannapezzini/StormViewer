@@ -21,13 +21,19 @@ class DetailViewController: UIViewController {
         
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
-        
         configureImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let key = "\(String(describing: selectedImage))"
+        let count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
+        UserDefaults.standard.set(count + 1, forKey: key)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,7 +55,7 @@ class DetailViewController: UIViewController {
     func configureImageView() {
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = UIView.ContentMode.scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.topAnchor),

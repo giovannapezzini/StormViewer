@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // MARK: - Properties
+
     var collectionView: UICollectionView!
     var pictures = [String]()
     
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,12 +24,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         performSelector(inBackground: #selector(loadPictures), with: nil)
     }
     
+    // MARK: - Layout UI
+    
     func configureView() {
         title = "Storm Viewer ⛈"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
-    
+        
     func configureCollectionView() {
         let layout: UICollectionViewFlowLayout = LeftAlignedCollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -40,24 +46,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         view.addSubview(collectionView)
     }
     
+    // MARK: - Fetch Data
+    
     @objc func loadPictures() {
         DispatchQueue.main.async {
             let fm = FileManager.default
             let path = Bundle.main.resourcePath!
             let items = try! fm.contentsOfDirectory(atPath: path)
             
-            
             for item in items.sorted() {
-                if item.hasPrefix("nssl") {
-                    self.pictures.append(item)
-                }
+                if item.hasPrefix("nssl") { self.pictures.append(item) }
             }
             
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            DispatchQueue.main.async { self.collectionView.reloadData() }
         }
     }
+    
+    // MARK: - Button tapped
     
     @objc func shareTapped() {
         let shareLink = "Try it! https://github.com/giovannapezzini/StormViewer"
@@ -66,6 +71,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
     }
+    
+    // MARK: - CollectionView DataSource and Delegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count

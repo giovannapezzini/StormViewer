@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var imageView = UIImageView()
     var selectedImage: String?
     var selectedPictureNumber = 0
@@ -18,15 +20,13 @@ class DetailViewController: UIViewController {
     var count = 0
     var countLabel = UILabel()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = "\(selectedPictureNumber) of \(totalPictures)"
-        
-        navigationItem.largeTitleDisplayMode = .never
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         
         setCounter()
+        configureView()
         configureImageView()
         configureLabel()
     }
@@ -46,6 +46,8 @@ class DetailViewController: UIViewController {
         navigationController?.hidesBarsOnTap = false
     }
     
+    // MARK: - Button tapped method
+    
     @objc func shareTapped() {
         guard let image = imageView.image?.jpegData(compressionQuality: 0.8), let imageName = selectedImage else {
             print("No image found")
@@ -57,9 +59,21 @@ class DetailViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    // MARK: - Counter method
+    
     func setCounter() {
         key = "\(String(describing: selectedImage))"
         count = UserDefaults.standard.value(forKey: key) as? Int ?? 0
+    }
+    
+    // MARK: - Layout UI
+    
+    func configureView() {
+        view.backgroundColor = .systemBackground
+        title = "\(selectedPictureNumber) of \(totalPictures)"
+        
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
     
     func configureImageView() {
